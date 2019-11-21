@@ -1,0 +1,48 @@
+
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+   body{
+      background-color: olive;
+   }
+   
+</style>
+
+
+
+<body>
+
+
+
+
+  <script type="text/javascript">
+                     var imgObj = null;
+            var animate ;
+                        function init(){
+               imgObj = document.getElementById('movetext');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+                        function moveRight(){
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,20); 
+            }
+function stop(){
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+                        window.onload =init;
+        </script>
+
+
+
+
+        <p id="movetext">click start to start moving and click stop to stop me moving</p>
+         <br>
+         <input type="button" value="Start" onclick="moveRight();" />
+         <input type="button" style="margin-left:120px; " value="Stop" onclick="stop();" />
+
+</body>
+</html>
